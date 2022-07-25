@@ -1,0 +1,268 @@
+NAME-UDIT KHANDELWAL		ASSIGNMENT-10
+
+1. Write a function to calculate the area of a circle. (TSRS)
+
+#include<stdio.h>
+#include<conio.h>
+float area(float);
+int main()
+{
+    float radius;
+    printf("enter radius of circle:");
+    scanf("%f",&radius);
+    printf("area of circle of radius %f is =%.2f",radius,area(radius));
+    getch();
+}
+float area(float n)
+{
+    return 3.14*n*n;
+}
+
+2. Write a function to calculate simple interest. (TSRS)
+
+#include<stdio.h>
+#include<conio.h>
+float si(float,float,float);
+int main()
+{
+    float p,r,t;
+    printf("enter principal amount:");
+    scanf("%f",&p);
+    printf("enter rate of interest:");
+    scanf("%f",&r);
+    printf("enter time:");
+    scanf("%f",&t);
+    printf("simple interest is:%f",si(p,r,t));
+    getch();
+}
+float si(float x,float y,float z)
+{
+    return (x*y*z)/100;
+}
+
+
+3. Write a function to check whether a given number is even or odd. Return 1 if the
+number is even, otherwise return 0. (TSRS)
+
+#include<stdio.h>
+#include<conio.h>
+int check(int);
+int main()
+{
+    int num,a;
+    printf("enter a number:");
+    scanf("%d",&num);
+    a=check(num);
+    if(a==1)
+        printf("number is even");
+    if(a==0)
+        printf("number is odd");
+    getch();
+}
+int check(int x)
+{
+    if(x%2==0)
+        return 1;
+    else
+        return 0;
+}
+
+4. Write a function to print first N natural numbers (TSRN)
+
+#include<stdio.h>
+#include<conio.h>
+void printN(int);
+int main()
+{
+    int num;
+    printf("enter how many natural numbers to print:");
+    scanf("%d",&num);
+    printN(num);
+    getch();
+}
+void printN(int x)
+{
+    int i=1;
+    while(x>=i)
+    {
+        printf("%d ",i);
+        i+=1;
+    }
+}
+
+5. Write a function to print first N odd natural numbers. (TSRN)
+
+#include<stdio.h>
+#include<conio.h>
+void print_odd(int);
+int main()
+{
+    int num;
+    printf("enter how many odd natural numbers to print:");
+    scanf("%d",&num);
+    print_odd(num);
+    getch();
+}
+void print_odd(int x)
+{
+    int i=1;
+    while(x>=i)
+    {
+        printf("%d ",i);
+        i+=2;
+    }
+}
+
+
+6. Write a function to calculate the factorial of a number. (TSRS)
+
+#include<stdio.h>
+#include<conio.h>
+long factorial(int);
+int main()
+{
+    int num;
+    printf("enter number:");
+    scanf("%d",&num);
+    printf("factorial of %d is: %ld",num,factorial(num));
+    getch();
+}
+long factorial(int x)
+{
+    int i=1;
+    long f=1;
+    if(x==0)
+        return 1;
+    while(x>=i)
+    {
+        f*=i;
+        i+=1;
+    }
+    return f;
+}
+
+7. Write a function to calculate the number of combinations one can make from n items
+and r selected at a time. (TSRS)
+
+#include<stdio.h>
+#include<conio.h>
+long factorial(int);
+int main()
+{
+    int n,r;
+    long comb;
+    printf("enter first number:");
+    scanf("%d",&n);
+    printf("enter second number:");
+    scanf("%d",&r);
+    comb=factorial(n)/(factorial(r)*factorial(n-r));
+    printf("combination of %d and %d is: %ld",n,r,comb);
+    getch();
+}
+long factorial(int x)
+{
+    int i=1;
+    long f=1;
+    if(x==0)
+        return 1;
+    while(x>=i)
+    {
+        f*=i;
+        i+=1;
+    }
+    return f;
+}
+
+8. Write a function to calculate the number of arrangements one can make from n items
+and r selected at a time. (TSRS)
+
+#include<stdio.h>
+#include<conio.h>
+long factorial(int);
+int main()
+{
+    int n,r;
+    long perm;
+    printf("enter first number:");
+    scanf("%d",&n);
+    printf("enter second number:");
+    scanf("%d",&r);
+    perm=factorial(n)/factorial(n-r);
+    printf("permutation of %d and %d is: %ld",n,r,perm);
+    getch();
+}
+long factorial(int x)
+{
+    int i=1;
+    long f=1;
+    if(x==0)
+        return 1;
+    while(x>=i)
+    {
+        f*=i;
+        i+=1;
+    }
+    return f;
+}
+
+9. Write a function to check whether a given number contains a given digit or not.
+(TSRS)
+
+#include<stdio.h>
+#include<conio.h>
+int find(int,int);
+int main()
+{
+    int num,dig,check;
+    printf("enter number:");
+    scanf("%d",&num);
+    printf("enter a digit to be searched in the number:");
+    scanf("%d",&dig);
+    check=find(num,dig);
+    if(check==1)
+        printf("%d contains %d",num,dig);
+    else
+        printf("%d does not contains %d",num,dig);
+    getch();
+}
+int find(int x,int y)
+{
+    int rem;
+    while(x!=0)
+    {
+        rem=x%10;
+        if(rem==y)
+            return 1;
+        x/=10;
+    }
+}
+
+
+10. Write a function to print all prime factors of a given number. For example, if the
+number is 36 then your result should be 2, 2, 3, 3. (TSRN)
+
+#include<stdio.h>
+#include<conio.h>
+void prime(int);
+int main()
+{
+    int num;
+    printf("enter number:");
+    scanf("%d",&num);
+    prime(num);
+    getch();
+}
+void prime(int n)
+{
+    int i;
+    for(i=2;n!=1;i++)
+    {
+        while(n%i==0)
+        {
+            printf("%d ",i);
+            n/=i;
+        }
+    }
+}
+
+
